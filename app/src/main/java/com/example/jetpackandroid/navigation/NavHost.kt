@@ -1,22 +1,27 @@
 package com.example.jetpackandroid.navigation
 
+import androidx.compose.material.Button
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackandroid.R
 
 @Composable
-fun NiaNavHost(
+fun SyhNavHost(
     startDestination: String = R.string.first_page_name.toString(),
+    navController: NavHostController = rememberNavController(),
 ) {
-    val navController = rememberNavController()
     NavHost(
         navController = navController,
         startDestination = startDestination,
     ){
         composable(R.string.first_page_name.toString()) {
-            //Home(/*...*/)
+            Home(
+                onNavigateTo = { navController.navigate("friendsList") },
+            )
         }
         composable(R.string.second_page_name.toString()) {
             //Chat(/*...*/)
@@ -28,4 +33,13 @@ fun NiaNavHost(
             //MyPage(/*...*/)
         }
     }
+}
+
+@Composable
+fun Home(
+    onNavigateTo : () -> Unit,
+) {
+  Button(onClick = onNavigateTo){
+      Text(text = "Navi to")
+  }
 }
