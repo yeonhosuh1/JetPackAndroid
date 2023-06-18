@@ -13,13 +13,17 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.jetpackandroid.navigation.SyhNavHost
 import com.example.jetpackandroid.screen.Home
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            //MyApp()
+            MyApp()
         }
     }
 }
@@ -27,34 +31,36 @@ class MainActivity : ComponentActivity() {
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MyApp() {
+    val navController = rememberNavController()
     Scaffold(
         bottomBar = {
-            BottomNavigation {
+            SyhNavHost(navController = navController)
+            /*BottomNavigation {
                 BottomNavigationItem(
                     selected = true,
                     onClick = { /* 처리할 작업 */ },
-                    icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
+                    icon = { Icon(Icons.Default.Home, contentDescription = stringResource(R.string.first_page_name)) },
                     label = { Text(text = stringResource(R.string.first_page_name)) }
                 )
                 BottomNavigationItem(
                     selected = false,
                     onClick = { /* 처리할 작업 */ },
-                    icon = { Icon(Icons.Default.Home, contentDescription = "Message") },
+                    icon = { Icon(Icons.Default.Home, contentDescription = stringResource(R.string.second_page_name)) },
                     label = { Text(text = stringResource(R.string.second_page_name)) }
                 )
                 BottomNavigationItem(
                     selected = false,
                     onClick = { /* 처리할 작업 */ },
-                    icon = { Icon(Icons.Default.Home, contentDescription = "Profile") },
+                    icon = { Icon(Icons.Default.Home, contentDescription = stringResource(R.string.third_page_name)) },
                     label = { Text(text = stringResource(R.string.third_page_name)) }
                 )
                 BottomNavigationItem(
                     selected = false,
                     onClick = { /* 처리할 작업 */ },
-                    icon = { Icon(Icons.Default.Home, contentDescription = "Settings") },
+                    icon = { Icon(Icons.Default.Home, contentDescription = stringResource(R.string.fourth_page_name)) },
                     label = { Text(text = stringResource(R.string.fourth_page_name)) }
                 )
-            }
+            }*/
         }
     ) {
         Home()

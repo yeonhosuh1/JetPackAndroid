@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackandroid.R
+import com.example.jetpackandroid.screen.Home
 
 @Composable
 fun SyhNavHost(
@@ -18,11 +19,6 @@ fun SyhNavHost(
         navController = navController,
         startDestination = startDestination,
     ){
-        composable(R.string.first_page_name.toString()) {
-            Home(
-                onNavigateTo = { navController.navigate("friendsList") },
-            )
-        }
         composable(R.string.second_page_name.toString()) {
             //Chat(/*...*/)
         }
@@ -35,11 +31,3 @@ fun SyhNavHost(
     }
 }
 
-@Composable
-fun Home(
-    onNavigateTo : () -> Unit,
-) {
-  Button(onClick = onNavigateTo){
-      Text(text = "Navi to")
-  }
-}
