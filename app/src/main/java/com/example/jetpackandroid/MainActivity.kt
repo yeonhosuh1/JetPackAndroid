@@ -4,20 +4,12 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Row
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackandroid.navigation.SyhNavHost
-import com.example.jetpackandroid.screen.Home
+import com.example.jetpackandroid.feature.Home
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +26,7 @@ fun MyApp() {
     val navController = rememberNavController()
     Scaffold(
         bottomBar = {
-            SyhNavHost(navController = navController)
+            SyhNavHost(navController = navController, startDestination = stringResource(R.string.first_page_name))
             /*BottomNavigation {
                 BottomNavigationItem(
                     selected = true,
