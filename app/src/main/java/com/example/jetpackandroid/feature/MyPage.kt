@@ -15,7 +15,7 @@ import com.example.jetpackandroid.R
 
 
 @Composable
-fun MyPage() {
+fun MyPageScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()

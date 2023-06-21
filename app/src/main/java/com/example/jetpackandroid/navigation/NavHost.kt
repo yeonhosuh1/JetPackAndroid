@@ -10,11 +10,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.jetpackandroid.BottomBarScreen
 import com.example.jetpackandroid.R
-import com.example.jetpackandroid.feature.Chat
-import com.example.jetpackandroid.feature.MyPage
-import com.example.jetpackandroid.feature.Posts
-import com.example.jetpackandroid.feature.homeScreen
+import com.example.jetpackandroid.feature.*
 
 @Composable
 fun SyhNavHost(
@@ -26,16 +24,16 @@ fun SyhNavHost(
         startDestination = startDestination,
     ){
         composable(route = R.string.first_page_name.toString()) {
-            homeScreen()
+            HomeScreen()
         }
         composable(route = R.string.second_page_name.toString()) {
-            Chat()
+            ChatScreen()
         }
         composable(route = R.string.third_page_name.toString()) {
-            Posts()
+            PostsScreen()
         }
         composable(route = R.string.fourth_page_name.toString()) {
-            MyPage()
+            MyPageScreen()
         }
         /*chatScreen(
             onTopicClick = navController::navigateToTopic,

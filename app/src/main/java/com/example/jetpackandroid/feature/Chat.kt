@@ -15,7 +15,7 @@ import com.example.jetpackandroid.R
 
 
 @Composable
-fun Chat() {
+fun ChatScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
