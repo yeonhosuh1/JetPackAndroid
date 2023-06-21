@@ -1,4 +1,4 @@
-package com.example.jetpackandroid.screen
+package com.example.jetpackandroid.feature
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

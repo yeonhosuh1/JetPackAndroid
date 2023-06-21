@@ -1,4 +1,4 @@
-package com.example.jetpackandroid.screen
+package com.example.jetpackandroid.feature
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -15,14 +15,14 @@ import com.example.jetpackandroid.R
 
 
 @Composable
-fun MyPage() {
+fun Posts() {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colors.primary)
     ){
         Text(
-            text = stringResource(R.string.fourth_page_name),
+            text = stringResource(R.string.third_page_name),
             modifier = Modifier.padding(16.dp),
             color = Color.Black
         )
