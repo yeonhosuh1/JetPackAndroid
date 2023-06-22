@@ -14,6 +14,8 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.jetpackandroid.bottomNavigation.BottomBarScreen
+import com.example.jetpackandroid.bottomNavigation.SyhNavHost
 
 @Composable
 fun MainScreen() {
@@ -26,7 +28,7 @@ fun MainScreen() {
                 .fillMaxSize()
                 .padding(it)
         ) { }
-        BottomNavGraph(navController = navController)
+        SyhNavHost(navController = navController)
     }
 }
 

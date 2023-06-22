@@ -1,4 +1,4 @@
-package com.example.jetpackandroid
+package com.example.jetpackandroid.bottomNavigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -10,7 +10,9 @@ import com.example.jetpackandroid.feature.MyPageScreen
 import com.example.jetpackandroid.feature.PostsScreen
 
 @Composable
-fun BottomNavGraph(navController: NavHostController){
+fun SyhNavHost(
+    navController: NavHostController
+) {
     NavHost(
         navController = navController,
         startDestination = BottomBarScreen.Home.route
