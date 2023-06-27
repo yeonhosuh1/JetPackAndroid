@@ -1,12 +1,14 @@
-package com.example.jetpackandroid.data
+package com.example.jetpackandroid.postData
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.time.LocalDateTime
 
 @Entity(tableName = "user_table")
-data class User (
+data class Post (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val Name: String,
-    val age: Int,
+    val timestamp: LocalDateTime,
+    val content: Int,
 )
