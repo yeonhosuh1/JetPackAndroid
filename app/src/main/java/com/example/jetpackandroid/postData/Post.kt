@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.time.LocalDateTime
 
-@Entity(tableName = "user_table")
+@Entity(tableName = "post_table")
 data class Post (
     @PrimaryKey(autoGenerate = true)
     val id: Int,

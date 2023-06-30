@@ -9,8 +9,8 @@ import androidx.room.Query
 @Dao
 interface PostDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addPost(user: Post)
+    fun addPost(post: Post)
 
-    @Query("SELECT * FROM user_table ORDER BY id ASC")
+    @Query("SELECT * FROM post_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<Post>>
 }

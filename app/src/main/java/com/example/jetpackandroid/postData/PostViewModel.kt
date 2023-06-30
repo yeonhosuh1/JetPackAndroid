@@ -13,14 +13,14 @@ class PostViewModel(application: Application): AndroidViewModel(application) {
     private val repository: PostRepository
 
     init {
-        val userDao = PostDatabase.getDatabase(application).postDao()
-        repository = PostRepository(userDao)
+        val postDao = PostDatabase.getDatabase(application).postDao()
+        repository = PostRepository(postDao)
         readAllData = repository.readAllData
     }
 
-    fun addUser(user: Post){
+    fun addPost(post: Post){
         viewModelScope.launch(Dispatchers.IO) {
-            repository.addPost(user)
+            repository.addPost(post)
         }
     }
 }
