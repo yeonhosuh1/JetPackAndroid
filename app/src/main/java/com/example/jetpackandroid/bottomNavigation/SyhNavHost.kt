@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 import com.example.jetpackandroid.feature.ChatScreen
 import com.example.jetpackandroid.feature.HomeScreen
 import com.example.jetpackandroid.feature.MyPageScreen
-import com.example.jetpackandroid.feature.PostsScreen
+import com.example.jetpackandroid.feature.posts.PostsScreen
 
 @Composable
 fun SyhNavHost(

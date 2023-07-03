@@ -1,4 +1,4 @@
-package com.example.jetpackandroid.feature
+package com.example.jetpackandroid.feature.posts
 
 import androidx.fragment.app.Fragment
 import com.example.jetpackandroid.R
