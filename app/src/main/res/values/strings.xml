@@ -4,4 +4,5 @@
     <string name="second_page_name" translatable="false">Chat</string>
     <string name="third_page_name" translatable="false">Posts</string>
     <string name="fourth_page_name" translatable="false">MyPage</string>
+    <string name="saved_loading" translatable="false">Loading</string>
 </resources>

@@ -24,7 +24,7 @@ fun SyhNavHost(
             ChatScreen()
         }
         composable(route = BottomBarScreen.Posts.route){
-            PostsScreen()
+            //PostsScreen()
         }
         composable(route = BottomBarScreen.MyPage.route){
             MyPageScreen()

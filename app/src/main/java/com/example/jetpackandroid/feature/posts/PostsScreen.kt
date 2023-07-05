@@ -1,30 +1,81 @@
 package com.example.jetpackandroid.feature.posts
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.jetpackandroid.R
+import com.example.jetpackandroid.core.designSystem.SyhLoadingWheel
+import com.example.jetpackandroid.postData.Post
+
+@Composable
+internal fun PostsRoute(
+    onTopicClick: (String) -> Unit,
+    onShowSnackbar: suspend (String, String?) -> Boolean,
+    modifier: Modifier = Modifier,
+    viewModel: PostsViewModel = hiltViewModel(),
+) {
+    /*
+    val postState by viewModel.postUiState.collectAsStateWithLifecycle()
+    PostsScreen(
+        postState = postState,
+        modifier = modifier,
+    )
+    */
+}
+
+@Composable
+internal fun PostsScreen(
+    postState: PostUiState,
+    modifier: Modifier = Modifier,
+) {
+    when (postState) {
+        PostUiState.Loading -> LoadingState(modifier)
+        is PostUiState.Success -> if (postState.feed.isNotEmpty()) {
+            PostsGrid(
+                postState,
+                modifier,
+            )
+        } else {
+            EmptyState(modifier)
+        }
+    }
+}
 
 
 @Composable
-fun PostsScreen() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colors.primary)
-    ){
-        Text(
-            text = stringResource(R.string.third_page_name),
-            modifier = Modifier.padding(16.dp),
-            color = Color.Black
-        )
-    }
+private fun LoadingState(modifier: Modifier = Modifier) {
+    SyhLoadingWheel(
+        contentDesc = stringResource(id = R.string.saved_loading),
+        modifier = modifier
+            .fillMaxWidth()
+            .wrapContentSize()
+            .testTag("forYou:loading"),
+    )
+}
+
+@Composable
+private fun PostsGrid(
+    postState: PostUiState,
+    modifier: Modifier,
+) {
+    ;
+}
+
+
+@Composable
+private fun EmptyState(modifier: Modifier = Modifier) {
+    ;
+}
+
+sealed interface PostUiState {
+    object Loading : PostUiState
+
+    data class Success(
+        val feed: List<Post>,
+    ) : PostUiState
 }
