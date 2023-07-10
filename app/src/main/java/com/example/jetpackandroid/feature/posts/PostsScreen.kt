@@ -14,18 +14,14 @@ import com.example.jetpackandroid.postData.Post
 
 @Composable
 internal fun PostsRoute(
-    onTopicClick: (String) -> Unit,
-    onShowSnackbar: suspend (String, String?) -> Boolean,
     modifier: Modifier = Modifier,
     viewModel: PostsViewModel = hiltViewModel(),
 ) {
-    /*
-    val postState by viewModel.postUiState.collectAsStateWithLifecycle()
+    val postState = PostUiState.Loading
     PostsScreen(
         postState = postState,
         modifier = modifier,
     )
-    */
 }
 
 @Composable
